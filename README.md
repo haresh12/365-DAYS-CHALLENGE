@@ -1,2 +1,1 @@
-# 365-DAYS-CHALLENGE
-365 days, 365 challenges, one coder's relentless pursuit of DSA excellence
+Welcome to my coding odyssey! This repository is my digital journal for the 365-day Data Structures and Algorithms (DSA) challenge I've set for myself. Join me as I explore the world of algorithms, hone my coding skills, and embark on a year-long journey of growth and learning. Expect daily code commits, progress logs, and the occasional victory dance. Let's conquer DSA together, one day at a time! 🚀👩‍💻
