@@ -76,10 +76,11 @@ class MyArray {
      * INSERTAT ==== UNSHIFT
      */
     insertAt(val,index){
+
      if(index === 0){
     return  this.unshift(val);
-     }else if(index === this.length){
-     return this.push(val)
+     }else if(index >= this.length){
+     return this.push(val);
      }else{
       // THIS IS SAME AS unshift just rather then 0 we need to use index provided in params
       let total = this.length;
