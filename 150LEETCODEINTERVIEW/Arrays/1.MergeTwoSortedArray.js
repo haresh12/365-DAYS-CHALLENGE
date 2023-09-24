@@ -12,6 +12,7 @@
 
 // DONE IN 20 MIN 
 // IMPORTENT THING mIndex >= 0 nIndex >= 0 IF YOU UNDERSTAND THIS TWO CONIDTION YOU UNDERSTAND THIS
+// ALSO MOST COFUSING THING WHY WE NEED TO START FROM BACK ITS INCREDIBLE ONCE YOU UNDERSTAND IT
 function mergeTwoSortedArray(nums1,nums2,m,n){
  if(m === 0 && n === 0) return [];
  if(n === 0) return nums1;
