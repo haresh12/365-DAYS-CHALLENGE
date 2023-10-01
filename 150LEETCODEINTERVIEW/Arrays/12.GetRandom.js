@@ -10,46 +10,48 @@
 
    class RandomizedSet {
 
-    constructor(){
-     this.map = {};
-     this.list = []; 
-    }
-    
-    insert(val){
-     if(val in this.map){
-      return false;
-     } 
-     this.map[val] = this.list.length;
-     this.list.push(val);
-     return true;
-    }
-  
-    remove(val){
-     if(val in this.map){
-       let indexInArr = this.map[val];
-       let lastIndex = this.list.length-1;
-       this.swapVal(indexInArr,lastIndex);
-       this.map[this.list[indexInArr]] = indexInArr; // THIS IS THE LINE THAT HAS PROBABILITY OF MISTAKES 
-       this.list.pop(); // MAKE SURE THIS LINE IS AFTER ABOVE LINE
-       delete this.map[val];
-       return true;
-     } 
-     return false;
-    }
-  
-    swapVal(indexInArr,lastIndex){
-      console.log(indexInArr,lastIndex)
-      let temp = this.list[indexInArr];
-      this.list[indexInArr] = this.list[lastIndex];
-      this.list[lastIndex] = temp;
-    }
-  
+     constructor(){
+      this.map = {};
+      this.list = [];
+     }
+
+     insert(val){
+      if(val in this.map) return false;
+      else {
+        this.list.push(val);
+        this.map[val] = this.list.length-1; // in this index current value will be stored
+        return true
+      }
+     }
+
+     remove(val){
+      if(val in this.map) {
+        this.list[this.map[val]] = this.list[this.list.length-1];
+        this.map[this.list[this.list.length-1]] = this.map[val];
+        delete this.map[val]; // THIS IS ALSO MUST NEEDED IF YOU UNDERSTAND THIS YOU UNDERSTAND LIFE
+        this.list.pop()
+        return true;
+      }else{
+        return false;
+      }
+     }
+
      getRandom(){
-       let randomIndex =  Math.floor(Math.random()*this.list.length); // because it may return 0 value also in that case we will return 0 index value
-       return this.list[randomIndex]
+      //MAKE SURE HERE WE DON'T NEED TO RETURN INDEX WE NEED TO RETURN VALUE SO DON' DO
+      // Math.floor(Math.random()*this.list.length) THIS
+      // RATHER DO THIS this.list[Math.floor(Math.random()*this.list.length)]
+      return this.list[Math.floor(Math.random()*this.list.length)]
      }
    }
-  
-  
-  
+
+   const set = new RandomizedSet();
+   set.insert(1);
+   set.remove(2);
+   set.insert(2);
+   set.getRandom();
+   console.log(set.remove(1));
+   console.log(set.map)
+   console.log(set.list)
+   console.log(set.getRandom())
+
   
