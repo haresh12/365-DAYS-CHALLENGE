@@ -39,7 +39,7 @@
      getRandom(){
       //MAKE SURE HERE WE DON'T NEED TO RETURN INDEX WE NEED TO RETURN VALUE SO DON' DO
       // Math.floor(Math.random()*this.list.length) THIS
-      // RATHER DO THIS this.list[Math.floor(Math.random()*this.list.length)]
+      // RATHER DO THIS 
       return this.list[Math.floor(Math.random()*this.list.length)]
      }
    }
